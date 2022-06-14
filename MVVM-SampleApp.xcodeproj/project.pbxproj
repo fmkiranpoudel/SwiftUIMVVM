@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		0D3618B628572538001D14B4 /* MVVM_SampleAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3618B528572538001D14B4 /* MVVM_SampleAppApp.swift */; };
-		0D3618B828572538001D14B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3618B728572538001D14B4 /* ContentView.swift */; };
+		0D3618B828572538001D14B4 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3618B728572538001D14B4 /* UserListView.swift */; };
 		0D3618BA2857253D001D14B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D3618B92857253D001D14B4 /* Assets.xcassets */; };
 		0D3618BD2857253D001D14B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D3618BC2857253D001D14B4 /* Preview Assets.xcassets */; };
+		0D3618C428575A88001D14B4 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D3618C328575A88001D14B4 /* Color.xcassets */; };
+		0D3618C6285762C5001D14B4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3618C5285762C5001D14B4 /* NetworkManager.swift */; };
+		0D3618C9285769E8001D14B4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3618C8285769E8001D14B4 /* User.swift */; };
+		0DF1095C285856250058D2BB /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF1095B285856250058D2BB /* APIError.swift */; };
+		0DF1095E285859070058D2BB /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF1095D285859070058D2BB /* UserCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0D3618B228572538001D14B4 /* MVVM-SampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-SampleApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D3618B528572538001D14B4 /* MVVM_SampleAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_SampleAppApp.swift; sourceTree = "<group>"; };
-		0D3618B728572538001D14B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0D3618B728572538001D14B4 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		0D3618B92857253D001D14B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D3618BC2857253D001D14B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0D3618C328575A88001D14B4 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		0D3618C5285762C5001D14B4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0D3618C8285769E8001D14B4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0DF1095B285856250058D2BB /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		0DF1095D285859070058D2BB /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +61,11 @@
 		0D3618B428572538001D14B4 /* MVVM-SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				0DF1095A285856080058D2BB /* Utilities */,
+				0DF10959285855F70058D2BB /* Assets */,
+				0DF10953285854C20058D2BB /* Modules */,
+				0D3618C7285769D7001D14B4 /* Models */,
 				0D3618B528572538001D14B4 /* MVVM_SampleAppApp.swift */,
-				0D3618B728572538001D14B4 /* ContentView.swift */,
-				0D3618B92857253D001D14B4 /* Assets.xcassets */,
 				0D3618BB2857253D001D14B4 /* Preview Content */,
 			);
 			path = "MVVM-SampleApp";
@@ -65,6 +77,49 @@
 				0D3618BC2857253D001D14B4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0D3618C7285769D7001D14B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0D3618C8285769E8001D14B4 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0DF10953285854C20058D2BB /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				0DF10954285854C90058D2BB /* UsersList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		0DF10954285854C90058D2BB /* UsersList */ = {
+			isa = PBXGroup;
+			children = (
+				0D3618B728572538001D14B4 /* UserListView.swift */,
+				0DF1095D285859070058D2BB /* UserCell.swift */,
+			);
+			path = UsersList;
+			sourceTree = "<group>";
+		};
+		0DF10959285855F70058D2BB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				0D3618C328575A88001D14B4 /* Color.xcassets */,
+				0D3618B92857253D001D14B4 /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		0DF1095A285856080058D2BB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0D3618C5285762C5001D14B4 /* NetworkManager.swift */,
+				0DF1095B285856250058D2BB /* APIError.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +182,7 @@
 			files = (
 				0D3618BD2857253D001D14B4 /* Preview Assets.xcassets in Resources */,
 				0D3618BA2857253D001D14B4 /* Assets.xcassets in Resources */,
+				0D3618C428575A88001D14B4 /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +193,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D3618B828572538001D14B4 /* ContentView.swift in Sources */,
+				0D3618C9285769E8001D14B4 /* User.swift in Sources */,
+				0D3618C6285762C5001D14B4 /* NetworkManager.swift in Sources */,
+				0DF1095E285859070058D2BB /* UserCell.swift in Sources */,
+				0D3618B828572538001D14B4 /* UserListView.swift in Sources */,
+				0DF1095C285856250058D2BB /* APIError.swift in Sources */,
 				0D3618B628572538001D14B4 /* MVVM_SampleAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
