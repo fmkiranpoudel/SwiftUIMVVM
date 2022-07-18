@@ -11,7 +11,29 @@ import SwiftUI
 struct MVVM_SampleAppApp: App {
     var body: some Scene {
         WindowGroup {
-            UserListView()
+//            ContentView()
+            UserListView(viewModel: UserListViewModel())
+        }
+    }
+}
+
+
+struct ContentView: View {
+    var body: some View {
+        
+        VStack {
+            Text("Hello World!")
+            Divider()
+            Text("Hey World")
+            Divider()
+                .frame(height: 3)
+                .background(.black)
+            HStack {
+                Text("Horizontal First Text")
+                Divider()
+                    .background(.red)
+                Text("Horizontal Second Text")
+            }
         }
     }
 }

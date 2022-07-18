@@ -15,35 +15,32 @@ struct UserCell: View {
     
     /// body of cell
     var body: some View {
-        HStack(alignment: .center, spacing: 10) {
-            ZStack(alignment: .trailing) {
-                AsyncImage(url: URL(string: user.image))
+        HStack(spacing: 10) {
+            
+            AsyncImage(url: URL(string: user.image)) { image in
+                image
+                    .resizable()
+                    .scaledToFill()
                     .frame(width: 60, height: 60)
+                
                     .cornerRadius(30)
                     .overlay(
                         Circle()
-                            .fill(Color( user.isOnline ? "Online" : "Offline"))
+                            .fill(user.isOnline ? Color("Online") : Color("Offline"))
                             .frame(width: 15, height: 15)
-                        , alignment: .bottomTrailing)
-                    .padding(.vertical, 10)
+                        , alignment: .bottomTrailing
+                    )
+                
+            } placeholder: {
+                ProgressView()
             }
             
             VStack(alignment: .leading, spacing: 5) {
-                
                 Text(user.fullName ).font(.title2)
                     .fontWeight(.medium)
                 Text(user.role).foregroundColor(.secondary)
                     .fontWeight(.semibold)
             }
-            
-            Spacer()
-            
-            Button {
-                debugPrint("Tapped Button")
-            } label: {
-                Image(systemName: "chevron.right")
-            }
-            .tint(.gray)
         }
     }
 }

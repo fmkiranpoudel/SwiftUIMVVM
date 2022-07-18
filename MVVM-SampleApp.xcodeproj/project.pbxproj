@@ -16,6 +16,7 @@
 		0D3618C9285769E8001D14B4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3618C8285769E8001D14B4 /* User.swift */; };
 		0DF1095C285856250058D2BB /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF1095B285856250058D2BB /* APIError.swift */; };
 		0DF1095E285859070058D2BB /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF1095D285859070058D2BB /* UserCell.swift */; };
+		0DF1096028585A830058D2BB /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF1095F28585A830058D2BB /* UserListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		0D3618C8285769E8001D14B4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0DF1095B285856250058D2BB /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		0DF1095D285859070058D2BB /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		0DF1095F28585A830058D2BB /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				0DF1095A285856080058D2BB /* Utilities */,
-				0DF10959285855F70058D2BB /* Assets */,
+				0DF10959285855F70058D2BB /* Resources */,
 				0DF10953285854C20058D2BB /* Modules */,
 				0D3618C7285769D7001D14B4 /* Models */,
 				0D3618B528572538001D14B4 /* MVVM_SampleAppApp.swift */,
@@ -100,17 +102,18 @@
 			children = (
 				0D3618B728572538001D14B4 /* UserListView.swift */,
 				0DF1095D285859070058D2BB /* UserCell.swift */,
+				0DF1095F28585A830058D2BB /* UserListViewModel.swift */,
 			);
 			path = UsersList;
 			sourceTree = "<group>";
 		};
-		0DF10959285855F70058D2BB /* Assets */ = {
+		0DF10959285855F70058D2BB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				0D3618C328575A88001D14B4 /* Color.xcassets */,
 				0D3618B92857253D001D14B4 /* Assets.xcassets */,
 			);
-			name = Assets;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		0DF1095A285856080058D2BB /* Utilities */ = {
@@ -195,6 +198,7 @@
 			files = (
 				0D3618C9285769E8001D14B4 /* User.swift in Sources */,
 				0D3618C6285762C5001D14B4 /* NetworkManager.swift in Sources */,
+				0DF1096028585A830058D2BB /* UserListViewModel.swift in Sources */,
 				0DF1095E285859070058D2BB /* UserCell.swift in Sources */,
 				0D3618B828572538001D14B4 /* UserListView.swift in Sources */,
 				0DF1095C285856250058D2BB /* APIError.swift in Sources */,

@@ -10,56 +10,34 @@ import SwiftUI
 /// UsersListView that shows list of users fetched from API
 struct UserListView: View {
     
-    /// holds list of users
-    @State private var users = [User]()
-    
-    ///  holds if alert should be shown or not
-    @State private var showAlert = false
-    
-    /// alert message
-    @State private var alertMessage = ""
-    
-    /// holds if indicator to be shown or not
-    @State private var showIndicator = true
-    
-    
+    @ObservedObject var viewModel: UserListViewModel
+        
     /// body of the view
     var body: some View {
         ZStack {
             NavigationView {
-                List(users, id: \.id) { user in
-                    UserCell(user: user)
+                List(viewModel.users, id: \.id) { user in
+                    NavigationLink(destination: Text(user.fullName)) {
+                        UserCell(user: user)
+                    }
                     
                 }
                 .navigationBarTitle("Users")
             }
-            /// If show indicator holds true, show progress view
-            if showIndicator {
+            /// If showIndicator holds true, show progress view
+            if viewModel.showIndicator {
                 ProgressView().scaleEffect(2)
             }
         }.onAppear{
-            callAPI()
-        }.alert(isPresented: $showAlert) {
-            Alert(title: Text(alertMessage))
+            viewModel.callAPI()
+        }.alert(isPresented: .constant(!viewModel.alertMessage.isEmpty)) {
+            Alert(title: Text(viewModel.alertMessage))
         }
     }
-    
-    /// fetch list of users from API
-    func callAPI() {
-        NetworkManager.shared.getUsers { result in
-            showIndicator = false
-            switch result {
-            case .success(let user):
-                self.users = user
-            case .failure(let failure):
-                self.showAlert = true
-                self.alertMessage = failure.localizedDescription
-            }
-        } }
 }
 
 struct UserListView_Previews: PreviewProvider {
     static var previews: some View {
-        UserListView()
+        UserListView(viewModel: UserListViewModel())
     }
 }
